@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+    <title>PiggyVest Calculator</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="./images/piggy-png_1_.png" alt="Logo">
+            </div>
+            <nav class="desktop">
+                <div class="links">
+                    <a href="#">About</a>
+                    <a href="#">Stories</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Log In</a>
+                </div>
+                <div class="call-to-action btn">
+                    <a href="#">Create a Free Account</a>
+                </div>
+            </nav>
+            <nav class="mobile">
+                	<i id="hamburger" class="fas fa-bars"></i>
+            </nav>
+            <div id="mobile-nav-content" class="mobile-nav-content">
+                <nav class="mobile-nav-items">
+                    <a href="#">About</a>
+                    <a href="#">Stories</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Log In</a>
+                    <a id="close" class="navlinks" href="#">X</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            
+            <div class="showcase">
+                <div>
+                    <h2>Estimate your investment growth over time</h2>
+                    <div class="image">
+                        <img src="./images/New-homepage-6 1.png" alt="">
+                    </div>
+                </div>
+                
+                <form action="">
+                    <label for="amount">Amount to Lock</label>
+                    <input type="number" name="amount" id="amount" placeholder="Amount you did like to Save">
+                    <label for="Plan">Choose a savings plan</label>
+                    <select id="plan" name="plan">
+                        <option value="10">Piggybank</option>
+                        <option value="15.5">Safelock</option>
+                        <option value="10">Target</option>
+                        <option value="10">Flex</option>
+                    </select>
+                    <label for="Plan">Select your savings frequency</label>
+                    <select id="frequency" name="frequency">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                    <label for="pay-date">Select Start Date</label>
+                    <input type="date" name="start-date" id="start-date">
+                    <label for="pay-date">Select Payback Date</label>
+                    <input type="date" name="pay-date" id="pay-date">
+                    <button id='calculate' class="btn">Calculate</button>
+                    <div class="bal-display">
+                    <h3>Estimated Balance</h3>
+                    <div class="balance">NGN <span id="totalSavings"></span></div>
+                   </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2>How does the calculator work</h2>
+            <div class="showcase">
+                <div class="image">
+                    <img src="./images/New-homepage-5 1.png" alt="">
+                </div>
+                <div class="text">
+                    <p>Use our "SafeLock" feature to lock funds away so you don't have access until your set date. You also earn over 13% p.a.</p>
+                    <a class="btn" href="#">Create a Free Account</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="article">
+                <h2>Over ₦1,000,000,000 securely saved every month</h2>
+                <p>PiggyVest uses bank-level security measures to keep your data safe.<br>
+                    PiggyVest users save & invest well over a billion every single month, and they are just getting started.</p>
+                    <a class="btn" href="#">Create Account For Free</a>
+            </div>
+            <div class="getapp">
+                <img src="./images/iosbadge-101-image.png" alt="">
+                <img src="./images/google-play-badge.png" alt="">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="col col1">
+                <div class="logo">
+                    <img src="./images/piggy-png_1_.png" alt="">
+                </div>
+                <p>PiggyVest (formerly piggybank.ng) is the largest online savings & investing platform in Nigeria.
+                    For over 4 years, our customers have saved and invested billions of Naira that they would normally be tempted to spend.</p>
+                <p>Office: Tesmot House, 3 Abdulrahman Okene Close, off Ligali Ayorinde Street, Victoria Island, Lagos.<br>
+                    0700 933 933 933 (Mon-Fri from 9am-5pm) - contact@piggyvest.com</p>
+                <p>&copy; 2016 - 2020 PiggyTech Global Limited - RC 1405222</p>
+            </div>
+            <div class="col col2">
+                <h3>Quick Links</h3>
+                <nav>
+                    <a href="#">AutoSave<sup>TM</sup></a>
+                    <a href="#">PiggyLink</a>
+                    <a href="#">QuickSave<sup>TM</sup></a>
+                    <a href="#">Withdrawals & Breaking<sup>TM</sup></a>
+                    <a href="#">Salary Management</a>
+                </nav>
+            </div>
+            <div class="col col3">
+                <h3>Company</h3>
+                <nav>
+                    <a href="#">About</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                </nav>
+                <div class="social-icons">
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
