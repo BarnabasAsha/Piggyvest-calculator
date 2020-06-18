@@ -47,15 +47,58 @@ function calc () {
     const payDate = document.getElementById('pay-date').value
     const displayAmount = document.getElementById('totalSavings')
     
+//     const form = document.getElementById('form')
+//     const errorMessage = document.createElement('div')
+//     errorMessage.className = 'error'
+//     form.appendChild(errorMessage)
+
+
+// //Ensures all fields are completely filled
+//     if(amount == ''||
+//         plan == ''||
+//         frequency == ''||
+//         startDate == ''||
+//         payDate == ''){
+//             setTimeout(() => {
+//                 errorMessage.innerHTML = 'Please completely fill all fields'
+//                 errorMessage.style.display = 'block'
+//             }, 1500)
+//             break;
+//     }
+
 
     const d1 = new Date(startDate)
     const d2 = new Date(payDate)
     const sol = Math.abs(d2 - d1);
+
+
+//Ensures later date is greater than former date and also not earlier than the current date
+
+    // if(d1 > d2 || d1 < new Date().getDate) {
+    //     setTimeout(() => {
+    //         errorMessage.textContent = 'Please select a valid time-frame'
+    //         errorMessage.style.display = 'block'
+    //     }, 1500)
+    //     break;
+    // }
+
+//Ensures that the frequency chosen matches the timeline picked
+
+    // if(sol < 1) {
+    //     setTimeout(() => {
+    //         errorMessage.textContent = 'Please select a time-frame that\'s consistent with your chosen frequency'
+    //         errorMessage.style.display = 'block'
+    //     }, 1500)
+    //     break;
+    // }
+
+
+    // This calculates the difference btw withdrawal date and start date
     
         let period;
 
         if(frequency === 'daily') {
-            period = Math.sol / 8.64E7;
+            period = sol / 8.64E7;
         }
 
         if(frequency === 'weekly') {
@@ -76,6 +119,8 @@ function calc () {
         fifteenPercent(amount);
     }
     
+    //Ten percent interest
+
     function tenPercent(a) {
         let r = 10/100;
         const interest = a * period;
@@ -84,7 +129,8 @@ function calc () {
         displayAmount.textContent = savings;
         console.log(period)
     }
-    
+    // Fifteen percent interest
+
     function fifteenPercent(a) {
         let r = 15.5/100
         const interest = a * period;

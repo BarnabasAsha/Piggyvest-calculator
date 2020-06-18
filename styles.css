@@ -40,6 +40,14 @@ sup {
     font-size: 0.5rem;
 }
 
+.error {
+    display: block;
+    color: red;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
 
 .header {
     display: flex;
@@ -215,9 +223,13 @@ sup {
 .showcase form .bal-display .balance {
     font-style: normal;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.5rem;
     color: #000;
+}
+
+.showcase form .bal-display .balance span {
+    font-size: 1.4rem;
 }
 
 .showcase text {
@@ -331,6 +343,7 @@ footer > .container .col nav .social-icons {
 .social-icons a {
     margin-right: 0.5em;
     margin-bottom: 1em;
+    font-size: 1.4rem;
 }
 
 @media only screen and (min-width: 900px) {
@@ -417,6 +430,10 @@ footer > .container .col nav .social-icons {
         justify-content: center;
         align-content: center;
         height: 350px;
+    }
+
+    .col2, .col3 {
+        align-self: stretch;
     }
 
     footer > .container .col1 p {
