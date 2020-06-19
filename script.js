@@ -73,24 +73,23 @@ function calc () {
     if(plan === 15.5){
         fifteenPercent(amount);
     }
-    // Please dont mind the name of variables i was rushing r=intrestrate interest= amount saved * period of savings
+    
     //Ten percent interest
 
     function tenPercent(a) {
         let r = 10/100;
         const interest = a * period;
         const interestGained = (interest * r) + interest;
-        const savings = Math.floor(interestGained);
+        const savings = Math.floor(interestGained)
         displayAmount.textContent = savings;
-        console.log(period)
     }
     // Fifteen percent interest
 
     function fifteenPercent(a) {
-        let r = 15.5/100;
+        let r = 15.5/100
         const interest = a * period;
         const interestGained = (interest * r) + interest;
-        const savings = Math.floor(interestGained);
+        const savings = Math.floor(interestGained)
         displayAmount.textContent = savings;
     }    
 }
@@ -152,7 +151,15 @@ calculate.addEventListener('click', (e) => {
     checkFields()
 })
 
+// function clearFields() {
+//     document.getElementById('amount').value = '';
+//     document.getElementById('plan').value = '';
+//     document.getElementById('frequency').value = '';
+//     document.getElementById('start-date').value = '';
+//     document.getElementById('pay-date').value = '';
+// }
 
+// window.onload = clearFields()
 
 
 
