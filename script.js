@@ -151,15 +151,7 @@ calculate.addEventListener('click', (e) => {
     checkFields()
 })
 
-// function clearFields() {
-//     document.getElementById('amount').value = '';
-//     document.getElementById('plan').value = '';
-//     document.getElementById('frequency').value = '';
-//     document.getElementById('start-date').value = '';
-//     document.getElementById('pay-date').value = '';
-// }
 
-// window.onload = clearFields()
 
 
 
