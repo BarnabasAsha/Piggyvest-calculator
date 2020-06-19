@@ -191,7 +191,7 @@ sup {
     padding: 10px 4px 10px 10px;
     width: 100%;
     margin: 0 auto 1em auto;
-    cursor: pointer;
+    cursor: default;
     color: rgba(59, 59, 59, 0.7);
 }
 

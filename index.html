@@ -54,7 +54,8 @@
                 
                 <form id="form" action="">
                     <label for="amount">Amount to Lock</label>
-                    <input type="number" name="amount" id="amount" placeholder="Amount you did like to Save">
+                    <input id="amount" value="" placeholder="Enter Amount">
+                    
                     <label for="Plan">Choose a savings plan</label>
                     <select id="plan" name="plan">
                         <option value="10">Piggybank</option>
@@ -68,17 +69,16 @@
                         <option value="weekly">Weekly</option>
                         <option value="monthly">Monthly</option>
                     </select>
-                    <label for="pay-date">Select Start Date</label>
-                    <input type="date" name="start-date" id="start-date">
-                    <label for="pay-date">Select Payback Date</label>
-                    <input type="date" name="pay-date" id="pay-date">
+                    <label for="pay-date">Input Savings duration in month</label>
+                    <input type="text" name="duration" id="duration">
+                    <!-- <label for="pay-date">Select Payback Date</label>
+                    <input type="date" name="pay-date" id="pay-date"> -->
                     <button id='calculate' class="btn">Calculate</button>
                     <div class="bal-display">
                     <h3>Estimated Balance</h3>
                     <div class="balance">NGN <span id="totalSavings"></span></div>
                    </div>
-                    
-                </form>
+               </form>
             </div>
         </div>
     </section>
@@ -149,5 +149,7 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="app.js"></script>
+
 </body>
 </html>
