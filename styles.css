@@ -41,7 +41,7 @@ sup {
 }
 
 .error {
-    display: block;
+    display: none;
     color: red;
     font-style: italic;
     font-weight: 600;

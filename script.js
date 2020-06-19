@@ -36,66 +36,18 @@ function navContentsShow () {
     const calculate = document.getElementById('calculate')
     
 
-
-//Flex, Target and PiggyBank are all 10% interest per annum
-//Frequency amount is either the amount of days or months Saved
-function calc () {
     const amount = parseFloat(document.getElementById('amount').value)
     const plan = parseFloat(document.getElementById('plan').value)
     const frequency = document.getElementById('frequency').value
     const startDate = document.getElementById('start-date').value
     const payDate = document.getElementById('pay-date').value
     const displayAmount = document.getElementById('totalSavings')
-    
-//     const form = document.getElementById('form')
-//     const errorMessage = document.createElement('div')
-//     errorMessage.className = 'error'
-//     form.appendChild(errorMessage)
-
-
-// //Ensures all fields are completely filled
-//     if(amount == ''||
-//         plan == ''||
-//         frequency == ''||
-//         startDate == ''||
-//         payDate == ''){
-//             setTimeout(() => {
-//                 errorMessage.innerHTML = 'Please completely fill all fields'
-//                 errorMessage.style.display = 'block'
-//             }, 1500)
-//             break;
-//     }
-
 
     const d1 = new Date(startDate)
     const d2 = new Date(payDate)
     const sol = Math.abs(d2 - d1);
 
-
-//Ensures later date is greater than former date and also not earlier than the current date
-
-    // if(d1 > d2 || d1 < new Date().getDate) {
-    //     setTimeout(() => {
-    //         errorMessage.textContent = 'Please select a valid time-frame'
-    //         errorMessage.style.display = 'block'
-    //     }, 1500)
-    //     break;
-    // }
-
-//Ensures that the frequency chosen matches the timeline picked
-
-    // if(sol < 1) {
-    //     setTimeout(() => {
-    //         errorMessage.textContent = 'Please select a time-frame that\'s consistent with your chosen frequency'
-    //         errorMessage.style.display = 'block'
-    //     }, 1500)
-    //     break;
-    // }
-
-
-    // This calculates the difference btw withdrawal date and start date
-    
-        let period;
+    let period;
 
         if(frequency === 'daily') {
             period = sol / 8.64E7;
@@ -108,8 +60,11 @@ function calc () {
         if(frequency === 'monthly') {
             period =  sol / 2.682E9;
         }
+//Flex, Target and PiggyBank are all 10% interest per annum
+//Frequency amount is either the amount of days or months Saved
+function calc () {
+    // This calculates the difference btw withdrawal date and start date
     
-
     if(plan === 10){
         tenPercent(amount);
     }
@@ -118,35 +73,90 @@ function calc () {
     if(plan === 15.5){
         fifteenPercent(amount);
     }
-    
+    // Please dont mind the name of variables i was rushing r=intrestrate interest= amount saved * period of savings
     //Ten percent interest
 
     function tenPercent(a) {
         let r = 10/100;
         const interest = a * period;
         const interestGained = (interest * r) + interest;
-        const savings = Math.floor(interestGained)
+        const savings = Math.floor(interestGained);
         displayAmount.textContent = savings;
         console.log(period)
     }
     // Fifteen percent interest
 
     function fifteenPercent(a) {
-        let r = 15.5/100
+        let r = 15.5/100;
         const interest = a * period;
         const interestGained = (interest * r) + interest;
-        const savings = Math.floor(interestGained)
+        const savings = Math.floor(interestGained);
         displayAmount.textContent = savings;
-    }
-
-    
+    }    
 }
 
+
+
+function checkFields() {
+    const form = document.getElementById('form')
+    const errorMessage = document.createElement('div')
+    errorMessage.className = 'error'
+    form.appendChild(errorMessage)
+
+
+//Ensures all fields are completely filled
+//Ensures later date is greater than former date and also not earlier than the current date
+//Ensures that the frequency chosen matches the timeline picked
+    if(document.getElementById('amount').value === ''){
+            errorMessage.style.display = 'block'
+            errorMessage.innerHTML = 'Please input an amount'
+            setTimeout(() => {
+                errorMessage.remove()
+            }, 2000)
+    }else if(document.getElementById('plan').value === ''){
+        errorMessage.style.display = 'block'
+        errorMessage.innerHTML = 'Please pick a plan'
+        setTimeout(() => {
+            errorMessage.remove()
+        }, 2000)
+}else if(document.getElementById('frequency').value === ''){
+    errorMessage.style.display = 'block'
+    errorMessage.innerHTML = 'Please pick a frequency'
+    setTimeout(() => {
+        errorMessage.remove()
+    }, 2000)
+}else if(document.getElementById('start-date').value === ''){
+    errorMessage.style.display = 'block'
+    errorMessage.innerHTML = 'Please pick a start date'
+    setTimeout(() => {
+        errorMessage.remove()
+    }, 2000)
+}else if(document.getElementById('pay-date').value === ''){
+    errorMessage.style.display = 'block'
+    errorMessage.innerHTML = 'Please pick a payback date'
+    setTimeout(() => {
+        errorMessage.remove()
+    }, 2000)
+}else if(period < 1) {
+        errorMessage.textContent = 'Please select a time-frame that is consistent with your chosen frequency'
+        errorMessage.style.display = 'block'
+        setTimeout(() => {
+           errorMessage.remove()
+        }, 2000)
+    }else {
+        calc()
+    }
+}
 calculate.addEventListener('click', (e) => {
     e.preventDefault();
-    calc()
-
+    checkFields()
 })
+
+
+
+
+
+
 
 
     
